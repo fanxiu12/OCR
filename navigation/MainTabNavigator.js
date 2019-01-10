@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
 import camera from '../screens/CameraScreen';
@@ -53,8 +53,22 @@ SettingsStack.navigationOptions = {
   ),
 };
 
-export default createBottomTabNavigator({
+
+export default createAppContainer(
+  createBottomTabNavigator({
   CameraStack,
   HistoryStack,
   SettingsStack,
-});
+},
+{
+  defaultNavigationOptions: ({ navigation }) => ({
+    tabBarIcon: ({ focused, tintColor }) =>
+      getTabBarIcon(navigation, focused, tintColor),
+  }),
+  tabBarOptions: {
+    BackgroundColor:"#292929",
+    activeTintcolor:"grey",
+  },
+}
+)
+);

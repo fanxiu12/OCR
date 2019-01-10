@@ -52,14 +52,6 @@ export default class HomeScreen extends React.Component {
             </TouchableOpacity>
           </View>
         </ScrollView>
-
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
-          </View>
-        </View>
       </View>
     );
   }
@@ -101,11 +93,11 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#292929',
   },
   developmentModeText: {
     marginBottom: 20,
-    color: 'rgba(0,0,0,0.4)',
+    color: 'rgb(255,255,255)',
     fontSize: 14,
     lineHeight: 19,
     textAlign: 'center',
@@ -133,42 +125,17 @@ const styles = StyleSheet.create({
     marginVertical: 7,
   },
   codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
+    color: 'rgb(255,255,255)',
   },
   codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
+    backgroundColor: '#292929',
     borderRadius: 3,
     paddingHorizontal: 4,
   },
   getStartedText: {
     fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
+    color: 'rgb(255,255,255)',
     lineHeight: 24,
-    textAlign: 'center',
-  },
-  tabBarInfoContainer: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    ...Platform.select({
-      ios: {
-        shadowColor: 'black',
-        shadowOffset: { height: -3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-      },
-      android: {
-        elevation: 20,
-      },
-    }),
-    alignItems: 'center',
-    backgroundColor: '#fbfbfb',
-    paddingVertical: 20,
-  },
-  tabBarInfoText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
     textAlign: 'center',
   },
   navigationFilename: {
