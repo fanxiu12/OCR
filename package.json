@@ -1,5 +1,6 @@
 {
   "main": "node_modules/expo/AppEntry.js",
+  "name": "app",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -12,9 +13,18 @@
   },
   "dependencies": {
     "@expo/samples": "2.1.1",
+    "anyline-ocr-react-native-module": "^6.1.0",
     "expo": "^32.0.0",
+    "firebase": "^5.7.3",
+    "prop-types": "^15.6.2",
     "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-horizontal-scrolling-menu": "^0.4.4",
+    "react-native": "0.57.1",
+    "react-native-camera": "^1.8.0",
+    "react-native-elements": "^1.0.0-beta7",
+    "react-native-listitem": "^1.0.5",
+    "react-native-side-menu": "^1.1.3",
+    "react-native-vector-icons": "^6.1.0",
     "react-navigation": "^3.0.9"
   },
   "devDependencies": {
