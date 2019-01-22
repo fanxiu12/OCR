@@ -1,7 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet, FlatList, Text, View, Dimensions } from 'react-native';
 import ajax from 'app/service/FetchData';
-import { List, ListItem, SearchBar, Button } from "react-native-elements";
 import { db } from 'app/service/config';
 import { Font } from 'expo';
 
@@ -55,8 +54,9 @@ export default class HistoryScreen extends React.Component {
           style={styles.header}
           horizontal
           data = {this.state.exampleData}
+          contentContainerStyle={styles.listView}
           renderItem = {({item}) =>
-            <View style={{flex:1}}>
+            <View>
               <Text style={styles.tabs}>{item.name}</Text>
             </View>}
           />
@@ -97,17 +97,21 @@ export default class HistoryScreen extends React.Component {
 
 
 const styles = StyleSheet.create({
+  listView: {
+     flex: 1,
+     justifyContent: 'center',
+     alignItems:'center'
+   },
   header: {
-    paddingTop:8,
     width:width,
     height:36,
     backgroundColor: '#494949',
   },
   tabs:{
+    marginHorizontal:20,
     letterSpacing: -1,
-    paddingHorizontal:36,
     fontFamily: 'open-sans-semibold',
-    color: '#9b9aa1'
+    color: '#ccc'
   },
   container: {
     justifyContent: 'center',

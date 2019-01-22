@@ -1,6 +1,6 @@
 // FetchData.js
 
-const URI = 'http://10.0.2.2:3000';
+const URI = 'http://172.20.10.6:3000';
 
 export default {
     async fetchUsers() {

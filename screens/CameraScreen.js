@@ -56,15 +56,7 @@ const wbIcons = {
 
 export default class CameraScreen extends React.Component {
   static navigationOptions = {
-      title: 'Camera',
-    headerTitleStyle: {
-      color: 'white',
-      textAlign:"center",
-      flex:1
-    },
-    headerStyle: {
-      backgroundColor: '#19191a',
-      elevation: null},
+    header: null
     }
 
   state = {

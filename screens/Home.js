@@ -19,11 +19,6 @@ export default class HomeScreen extends React.Component {
     render() {
       return (
         <View>
-        <ScrollView style={styles.scrollheader} horizontal={true}>
-        <Text style={styles.tabs}>IC</Text>
-        <Text style={styles.tabs}>Bank Statements</Text>
-        <Text style={styles.tabs}>Others</Text>
-        </ScrollView>
         </View>
       );
     }
