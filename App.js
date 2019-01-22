@@ -8,6 +8,10 @@ export default class App extends React.Component {
     isLoadingComplete: false,
   };
 
+  state = {
+    fontLoaded: false,
+  };
+
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
       return (
@@ -39,6 +43,10 @@ export default class App extends React.Component {
         // We include SpaceMono because we use it in HomeScreen.js. Feel free
         // to remove this if you are not using it in your app
         'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
+        'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+        'open-sans-light': require('./assets/fonts/OpenSans-Light.ttf'),
+        'open-sans-semibold': require('./assets/fonts/OpenSans-SemiBold.ttf'),
+        'open-sans-regular': require('./assets/fonts/OpenSans-Regular.ttf'),
       }),
     ]);
   };

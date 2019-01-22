@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform,StyleSheet } from 'react-native';
+import { Platform,StyleSheet,Text } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
@@ -13,11 +13,13 @@ const HomeStack = createStackNavigator({
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+  tabBarLabel: <Text style={{fontSize: 9, alignSelf:'center', paddingBottom:5, color:'grey',}}>
+  HOME
+  </Text>,
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+    focused={focused}
+    name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
     />
   ),
 };
@@ -27,15 +29,17 @@ const CameraStack = createStackNavigator({
 });
 
 CameraStack.navigationOptions = {
-  tabBarLabel: 'Camera',
+  tabBarLabel: <Text style={{fontSize: 9, alignSelf:'center', paddingBottom:5, color:'grey',}}>
+  CAMERA
+  </Text>,
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
+    focused={focused}
+    name={
+      Platform.OS === 'ios'
+      ? `ios-information-circle${focused ? '' : '-outline'}`
+      : 'md-information-circle'
+    }
     />
   ),
 };
@@ -45,11 +49,13 @@ const HistoryStack = createStackNavigator({
 });
 
 HistoryStack.navigationOptions = {
-  tabBarLabel: 'History',
+  tabBarLabel: <Text style={{fontSize: 9, alignSelf:'center', paddingBottom:5, color:'grey',}}>
+  HISTORY
+  </Text>,
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+    focused={focused}
+    name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
     />
   ),
 };
@@ -59,11 +65,13 @@ const SettingsStack = createStackNavigator({
 });
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+  tabBarLabel: <Text style={{fontSize: 9, alignSelf:'center', paddingBottom:5, color:'grey',}}>
+  SETTINGS
+  </Text>,
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+    focused={focused}
+    name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
     />
   ),
 };
@@ -72,10 +80,19 @@ SettingsStack.navigationOptions = {
 export default createAppContainer(
   createBottomTabNavigator(
     {
-  HomeStack,
-  CameraStack,
-  HistoryStack,
-  SettingsStack,
-},
-)
+      HomeStack,
+      CameraStack,
+      HistoryStack,
+      SettingsStack,
+    },
+  )
 );
+
+const styles = StyleSheet.create({
+  label:{
+    fontSize: 9,
+    alignSelf:'center',
+    paddingBottom:5,
+    color:'grey',
+  },
+});

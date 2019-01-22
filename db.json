@@ -2,66 +2,25 @@
     "users":
         [
             {
-                "name": "Proxima Midnight",
-                "email": "proxima@appdividend.com",
+                "captureID":0,
+                "name": "FAN XIU MING",
                 "id_type":1,
-                "bank":1
+                "bank":1,
+                "timestamp":"2014-04-23T18:25:43.511Z"
             },
             {
-                "name": "Ebony Maw",
-                "email": "ebony@appdividend.com",
+                "captureID":1,
+                "name": "BEH BOON KIAT",
                 "id_type":2,
-                "bank":2
+                "bank":2,
+                "timestamp":"2013-04-23T18:25:43.511Z"
             },
             {
-                "name": "Black Dwarf",
-                "email": "dwarf@appdividend.com",
+                "captureID":2,
+                "name": "Pavithera Rau",
                 "id_type":3,
-                "bank":3
-            },
-            {
-                "name": "Mad Titan",
-                "email": "thanos@appdividend.com"
-            },
-            {
-                "name": "Supergiant",
-                "email": "supergiant@appdividend.com"
-            },
-            {
-                "name": "Loki",
-                "email": "loki@appdividend.com"
-            },
-            {
-                "name": "corvus",
-                "email": "corvus@appdividend.com"
-            },
-            {
-                "name": "Proxima Midnight",
-                "email": "proxima1@appdividend.com"
-            },
-            {
-                "name": "Ebony Maw",
-                "email": "ebony1@appdividend.com"
-            },
-            {
-                "name": "Black Dwarf",
-                "email": "dwarf1@appdividend.com"
-            },
-            {
-                "name": "Mad Titan",
-                "email": "thanos1@appdividend.com"
-            },
-            {
-                "name": "Supergiant",
-                "email": "supergiant1@appdividend.com"
-            },
-            {
-                "name": "Loki",
-                "email": "loki1@appdividend.com"
-            },
-            {
-                "name": "corvus",
-                "email": "corvus1@appdividend.com"
+                "bank":3,
+                "timestamp":"2012-04-23T18:25:43.511Z"
             }
         ]
 }

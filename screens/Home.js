@@ -1,84 +1,44 @@
 import React from 'react';
-import {Button, Image, ScrollView, StyleSheet, Text, View, Dimensions} from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
+import { ExpoLinksView } from '@expo/samples';
+import { Text, View, } from 'react-native';
 
-export default function Result({
-                                 result,
-                                 imagePath,
-                                 fullImagePath,
-                                 emptyResult,
-                                 currentScanMode,
-                               }) {
-  let fullImage = (<View/>);
-  let fullImageText = (<View/>);
-  if (fullImagePath && fullImagePath != '') {
-    fullImage = (
-        <Image
-            style={styles.image}
-            resizeMode={'contain'}
-            source={{uri: `file://${fullImagePath}`}}
-        />);
-    fullImageText = (
-        <Text style={styles.text}>Full Image:</Text>
-    );
-  }
+export default class HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Home',
+    headerTitleStyle: {
+      color: 'white',
+      textAlign:"center",
+      flex:1
+    },
+    headerStyle: {
+      backgroundColor: '#19191a',
+      elevation: null},
+    }
 
-  return (
-      <View style={styles.container}>
-        <ScrollView contentContainerStyle={styles.scrollContainer} >
-
-          {fullImageText}
-          {fullImage}
-
-          <Text style={styles.text}>Cutout:</Text>
-          <Image
-              style={styles.image}
-              resizeMode={'contain'}
-              source={{uri: `file://${imagePath}`}}
-          />
-          {Object.keys(result).map((value, key) => {
-            return (<Text style={styles.text} key={`Result_Text_${key}`}>
-              {(value !== 'confidence' || result[value] > 0) &&
-               `${value}: ${result[value]}`
-              }
-            </Text>);
-          })}
-          <View style={styles.backButton}>
-            <Button title={'Back'} onPress={emptyResult}/>
-          </View>
+    render() {
+      return (
+        <View>
+        <ScrollView style={styles.scrollheader} horizontal={true}>
+        <Text style={styles.tabs}>IC</Text>
+        <Text style={styles.tabs}>Bank Statements</Text>
+        <Text style={styles.tabs}>Others</Text>
         </ScrollView>
-      </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  image: {
-    // flex: 1,
-    height: 300,
-    width: Dimensions.get('window').width,
-    alignSelf: 'stretch',
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    backgroundColor: '#303030',
-    marginBottom: 50,
-    marginTop: 50,
-  },
-  text: {
-    color: "white",
-    justifyContent: 'space-around',
-    marginTop: 5
-  },
-  scrollContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    width: '100%',
-    flexDirection: 'column',
-  },
-
-  backButton: {
-    marginTop: 25,
-    width: '100%'
+        </View>
+      );
+    }
   }
-});
+
+  const styles = StyleSheet.create({
+    scrollheader: {
+      height:36,
+      paddingTop: 5,
+      backgroundColor: '#494949',
+    },
+    tabs:{
+      letterSpacing: -1,
+      paddingHorizontal:50,
+      fontFamily: 'open-sans-semibold',
+      color: '#9b9aa1'
+    }
+  });
